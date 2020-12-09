@@ -31,6 +31,8 @@ pub fn main() !void {
 
     while (input_len != 0) {
         var input_slice = buffer[0..input_len];
+        // State machine parsing character-by-character
+        // I still don't know how to do the equivalent of scanf
         for (input_slice) |chr, i| {
             if (state == State.parse_min and chr >= '0' and chr <= '9') {
                 min = min * 10 + chr - '0';

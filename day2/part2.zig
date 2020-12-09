@@ -22,6 +22,7 @@ pub fn main() !void {
 
     var state: State = State.parse_min;
 
+    // min/max now no longer mean min/max, but I cbf changing the name
     var min: u32 = 0;
     var min_good: bool = false;
     var max: u32 = 0;
@@ -34,6 +35,8 @@ pub fn main() !void {
 
     while (input_len != 0) {
         var input_slice = buffer[0..input_len];
+        // State machine parsing character-by-character
+        // I still don't know how to do the equivalent of scanf
         for (input_slice) |chr, i_mod_buffer| {
             const i = iterations * INPUT_BUFFER_LEN + i_mod_buffer;
 
